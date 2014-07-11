@@ -1,6 +1,7 @@
 require "uber/inheritable_attr"
 require "hooks/hook"
 
+
 # Almost like ActiveSupport::Callbacks but 76,6% less complex.
 #
 # Example:
@@ -134,3 +135,4 @@ module Hooks
 end
 
 require "hooks/instance_hooks"
+require "hooks/static"
