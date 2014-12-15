@@ -3,7 +3,7 @@ module Hooks
     @@hooks = HookSet.new
     
     def self.run name, scope,  *args
-      @@hooks[name].run scope, *args
+      @@hooks[name.to_sym].run scope, *args if @@hooks[name.to_sym].present?
     end    
     
     def self.add name, method=nil, &block       
@@ -14,7 +14,7 @@ module Hooks
     end
     
     def self.define name, options = {}
-      @@hooks[name] = Hook.new(options)
+      @@hooks[name.to_sym] = Hook.new(options)
     end
     
     
